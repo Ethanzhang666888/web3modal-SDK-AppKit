@@ -1,3 +1,5 @@
-"scripts": {
-  "build": "webpack --mode production"
+{
+  "scripts": {
+    "build": "webpack --mode production"
+  }
 }
