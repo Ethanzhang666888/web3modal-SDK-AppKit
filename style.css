@@ -1,0 +1,57 @@
+:root {
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --animation-duration: 1s; /* 动画时间改为 1s 更流畅 */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
+}
+
+#connectButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+    outline: none;
+    animation: buttonFadeIn var(--animation-duration) ease forwards;
+    will-change: transform;
+}
+
+#connectButton:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.05);
+}
+
+#connectButton:active {
+    transform: scale(0.95);
+}
+
+#walletAddress, #balance {
+    margin-top: 20px;
+    font-size: 18px;
+    opacity: 0;
+    animation: contentFadeUp var(--animation-duration) ease forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes buttonFadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes contentFadeUp {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
